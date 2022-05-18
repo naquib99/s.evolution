@@ -7,7 +7,7 @@
         <h1>Admin Menu</h1>
         <hr>
         <div class="row pt-2">
-            <div class="col-md-4">
+            <div class="col-sm d-flex">
                 <div class="card">
                     <a class="bg-image hover-zoom" href="/stock">
                         <img 
@@ -21,9 +21,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm d-flex">
                 <div class="card">
-                    <a style="background-color:black;" href=" /mngNewStck">
+                    <a href=" /mngNewStck">
                         <img class="img-thumbnail"
                             src="https://booster.io/wp-content/uploads/custom-order-numbers-e1438361586475.png"
                             alt="Card image cap">
@@ -34,9 +34,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm d-flex">
                 <div class="card">
-                    <a style="background-color:white;" href=" /request/list">
+                    <a href=" /request/list">
                         <img 
                             class="img-thumbnail"
                             src="https://static.thenounproject.com/png/2021808-200.png" 
@@ -49,16 +49,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
-    <div class="container">
-        <div class="row pt-5">
-            <div class="col-md-4">
+        <div class="row pt-5 d-flex justify-content-center">
+            <div class="col-sm d-flex">
                 <div class="card">
                     <a href="/item_approvals/userList">
                         <img 
                             class="img-thumbnail"
-                            src="https://www.travelweek.ca/wp-content/uploads/2015/11/11.02_news_TravelBrands-creditors-approve-plan.jpg"
+                            src="https://cdn-icons-png.flaticon.com/512/1721/1721925.png"
                             alt="Card image cap">
                         </img>
                     </a>
@@ -68,12 +67,12 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card  text-center" style="width: 18rem;">
+            <div class="col-sm d-flex">
+                <div class="card">
                     <a href=" /auditreport">
                         <img 
-                            class="p-2 card-img-top" 
-                            src="https://requirements.com/Portals/0/EasyDNNnews/34/img-report.png"
+                            class="img-thumbnail" 
+                            src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png"
                             alt="Card image cap">
                         </img>
                     </a>
@@ -82,8 +81,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-sm d-flex"></div>
         </div>
     </div>
-
 @endsection
