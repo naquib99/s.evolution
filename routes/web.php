@@ -20,10 +20,13 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
-Route::get('/', [Controller::class, 'welcome']);
+
 
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
+
+    //HOME INDEX
+    Route::get('/', [Controller::class, 'login']);
 
     //OTHERS
     Route::get('/admin_home', [Controller::class, 'adminHomeIndex'])->middleware('auth');
