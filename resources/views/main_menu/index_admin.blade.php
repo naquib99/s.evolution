@@ -6,12 +6,13 @@
     <div class="container pt-4">
         <h1>Admin Menu</h1>
         <hr>
-        <div class="row pt-2">
-            <div class="col-sm d-flex">
-                <div class="card">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3 d-flex">
+                <div class="card text-center p-1" style="height: 15rem; width:12rem;">
                     <a class="bg-image hover-zoom" href="/stock">
                         <img 
-                            class="img-thumbnail"
+                            class="img-fluid"
+                            style="height: 10rem;"
                             src="http://cdn.onlinewebfonts.com/svg/img_551091.png"
                             alt="Card image cap">
                         </img>
@@ -22,10 +23,12 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm d-flex">
-                <div class="card">
+            <div class="col-md-3 d-flex">
+                <div class="card text-center p-1" style="height: 15rem; width:12rem;">
                     <a href=" /mngNewStck">
-                        <img class="img-thumbnail"
+                        <img 
+                            class="img-fluid"
+                            style="height: 10rem;"
                             src="https://booster.io/wp-content/uploads/custom-order-numbers-e1438361586475.png"
                             alt="Card image cap">
                         </img>
@@ -36,11 +39,12 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm d-flex">
-                <div class="card">
+            <div class="col-md-3 d-flex">
+                <div class="card text-center p-1" style="height: 15rem; width:12rem;">
                     <a href=" /request/list">
                         <img 
-                            class="img-thumbnail"
+                            class="img-fluid"
+                            style="height: 10rem;"
                             src="https://static.thenounproject.com/png/2021808-200.png" 
                             alt="Card image cap">
                         </img>
@@ -54,12 +58,13 @@
         </div>
     
 
-        <div class="row pt-5 d-flex justify-content-center">
-            <div class="col-sm d-flex">
-                <div class="card">
+        <div class="row pt-3 d-flex justify-content-center">
+            <div class="col-md-3 d-flex">
+                <div class="card text-center p-1" style="height: 15rem; width: 12rem;">
                     <a href="/item_approvals/userList">
                         <img 
-                            class="img-thumbnail"
+                            class="img-fluid"
+                            style="height: 10rem;"
                             src="https://cdn-icons-png.flaticon.com/512/1721/1721925.png"
                             alt="Card image cap">
                         </img>
@@ -71,11 +76,12 @@
                 </div>
             </div>
 
-            <div class="col-sm d-flex">
-                <div class="card">
+            <div class="col-md-3 d-flex">
+                <div class="card text-center p-1" style="height: 15rem; width: 12rem;">
                     <a href=" /auditreport">
                         <img 
-                            class="img-thumbnail" 
+                            class="img-fluid"
+                            style="height: 10rem;  "
                             src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png"
                             alt="Card image cap">
                         </img>
@@ -86,7 +92,6 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm d-flex"></div>
         </div>
     </div>
 @endsection

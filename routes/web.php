@@ -20,9 +20,6 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
-
-
-
 Route::group(['middleware' => ['auth', 'admin']], function () {
 
     //HOME INDEX
@@ -39,8 +36,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/stock/show/{item_id}', [Controller::class, 'stockShow']);
     Route::get('/stock/create', [Controller::class, 'stockCreate']);
     Route::get('/stock/report', [Controller::class, 'stockReport']);
-
-
 
     // ITEM APPROVAL ---------------------------------------------------------------------------
     Route::get('/item_approvals/userList', 'App\Http\Controllers\Controller@approveIndex');
@@ -68,10 +63,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/auditreport/view/{id}', 'App\Http\Controllers\Controller@auditShow');
 });
 
-
 Route::get('/staff_home', [Controller::class, 'staffHomeIndex'])->middleware('auth');
-
-
 
 //LOGIN USER ACCESSIBLE ---------------------------------------------------------------------------------------------------
 Route::get('/request', [Controller::class, 'requestCreate'])->middleware('auth');
@@ -80,11 +72,6 @@ Route::get('/request/list/{id}', [Controller::class, 'requestShow'])->middleware
 Route::post('/request/list/update/{id}', [Controller::class, 'requestUpdate'])->middleware('auth');
 Route::get('/request/list/delete/{id}/{req_id}', [Controller::class, 'requestDelete'])->middleware('auth');
 Route::post('/request/submit', [Controller::class, 'requestStore'])->middleware('auth');
-
-
-
-
-
 
 Auth::routes();
 
