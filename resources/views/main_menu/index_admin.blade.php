@@ -15,10 +15,11 @@
                             src="http://cdn.onlinewebfonts.com/svg/img_551091.png"
                             alt="Card image cap">
                         </img>
+                    
+                        <div class="card-body text-center">
+                            <b>Manage Stock Inventory</b>
+                        </div>
                     </a>
-                    <div class="card-body text-center">
-                        <b>Manage Stock Inventory</b>
-                    </div>
                 </div>
             </div>
             <div class="col-sm d-flex">
@@ -28,10 +29,11 @@
                             src="https://booster.io/wp-content/uploads/custom-order-numbers-e1438361586475.png"
                             alt="Card image cap">
                         </img>
+                    
+                        <div class="card-body text-center">
+                            <b class="font-weight-bold">Order New Stock</b>
+                        </div>
                     </a>
-                    <div class="card-body text-center">
-                        <b class="font-weight-bold">Order New Stock</b>
-                    </div>
                 </div>
             </div>
             <div class="col-sm d-flex">
@@ -42,10 +44,11 @@
                             src="https://static.thenounproject.com/png/2021808-200.png" 
                             alt="Card image cap">
                         </img>
+                    
+                        <div class="card-body text-center">
+                            <b class="font-weight-bold">Request Items</b>
+                        </div>
                     </a>
-                    <div class="card-body text-center">
-                        <b class="font-weight-bold">Request Items</b>
-                    </div>
                 </div>
             </div>
         </div>
@@ -60,10 +63,11 @@
                             src="https://cdn-icons-png.flaticon.com/512/1721/1721925.png"
                             alt="Card image cap">
                         </img>
+                    
+                        <div class="card-body text-center">
+                            <b>Approve Items Requests</b>
+                        </div>
                     </a>
-                    <div class="card-body text-center">
-                        <b>Approve Items Requests</b>
-                    </div>
                 </div>
             </div>
 
@@ -75,10 +79,11 @@
                             src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png"
                             alt="Card image cap">
                         </img>
+                    
+                        <div class="card-body text-center text-center">
+                            <b class="font-weight-bold">Manage Audit Report</b>
+                        </div>
                     </a>
-                    <div class="card-body text-center text-center">
-                        <b class="font-weight-bold">Manage Audit Report</b>
-                    </div>
                 </div>
             </div>
             <div class="col-sm d-flex"></div>
