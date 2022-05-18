@@ -25,23 +25,16 @@ Route::get('/', [Controller::class, 'welcome']);
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
 
-
-
     //OTHERS
     Route::get('/admin_home', [Controller::class, 'adminHomeIndex'])->middleware('auth');
-
-
 
     //MANAGE STOCK---------------------------------------------------------------------------
     Route::get('/stock', [Controller::class, 'stockIndex']);
     Route::post('/stock', [Controller::class, 'stockStore']);
     Route::delete('/stock/{item_id}', [Controller::class, 'stockDestroy']);
-
     Route::post('/stock/show', [Controller::class, 'stockUpdate']);
     Route::get('/stock/show/{item_id}', [Controller::class, 'stockShow']);
-
     Route::get('/stock/create', [Controller::class, 'stockCreate']);
-
     Route::get('/stock/report', [Controller::class, 'stockReport']);
 
 
