@@ -323,7 +323,7 @@ class Controller extends BaseController
     public function stockReport()
     {
         //Query for Brands
-        $data = Item::groupBy('item_brand')->orderBy('sum', 'desc')->select('item_brand', \DB::raw("count(item_id) as sum"))->get();
+        $data = Item::groupBy('item_brand')->orderBy('sum', 'desc')->select('item_brand', DB::raw("count(item_id) as sum"))->get();
 
         //Query for Low Stock
         $data2 = Item::select('item_id', 'item_name', 'item_stock_qty')->where('item_stock_qty', '<', '30')->get();
