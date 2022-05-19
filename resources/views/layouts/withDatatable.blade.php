@@ -2,38 +2,29 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    
-    <script type="text/javascript" src="{{ asset('js/request.js') }}"></script>
 
     <script src="https://kit.fontawesome.com/34ae9aae12.js" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     {{-- Datatables libraries --}}
     <link 
         rel="stylesheet" 
         type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-    </link>
+        href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
     <link 
         rel="stylesheet" 
         type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+        <link 
+        rel="stylesheet" 
+        type="text/css"
         href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap5.min.css">
-    </link>
-
+    
     <script 
         type="text/javascript" 
         src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js">
     </script>
-    <script 
-        type="text/javascript" 
-        src="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap5.min.css">
-    </script>
-    <style>
-
-
-    </style>
-
 
     <meta charset="utf-8">
 
