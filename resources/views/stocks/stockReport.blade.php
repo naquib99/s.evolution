@@ -1,9 +1,6 @@
 @extends ('layouts.normalPage')
 @section('content')
 
-
-
-
     <script type="text/javascript">
         // Load the Visualization API and the controls package.
         google.charts.load('current', {
@@ -13,6 +10,12 @@
         // Set a callback to run when the Google Visualization API is loaded.
         google.charts.setOnLoadCallback(drawDashboard);
         google.charts.setOnLoadCallback(drawLowChart);
+
+        //Responsive chart
+        $(window).resize(function(){
+            drawLowChart();
+            drawDashboard()
+        });
 
         // Callback that creates and populates a data table,
         // instantiates a dashboard, a range slider and a pie chart,
@@ -32,13 +35,13 @@
             // Set options bar chart.
             var options = {
                 title: 'Items Low in Stock',
-                width: 400,
-                height: 220
             };
 
             // Instantiate and draw the chart
             var chart = new google.visualization.BarChart(document.getElementById('low_stock_chart'));
             chart.draw(data, options);
+
+
         }
 
 
@@ -70,14 +73,11 @@
                 'chartType': 'PieChart',
                 'containerId': 'chart_div',
                 'options': {
-                    'width': 400,
-                    'height': 200,
                     'pieSliceText': 'value',
-                    'legend': 'right'
+                    'legend': 'right',
+                    'pieHole': 0.5
                 }
             });
-
-
 
             // Establish dependencies, declaring that 'filter' drives 'pieChart',
             // so that the pie chart will only display entries that are let through
@@ -86,6 +86,10 @@
 
             // Draw the dashboard.
             dashboard.draw(data);
+
+            $(window).resize(function(){
+                dashboard.draw(data, options);
+            });
         }
 
     </script>
@@ -96,21 +100,19 @@
         <div class="row ">
 
             <div class="col-md-4 ">
-                <button type="button" class="btn"> <a href="/stock">
-                        <i class="fas fa-arrow-circle-left fa-3x"></i></a></button>
+                <button type="button" class="btn">
+                    <a href="/stock">
+                        <i class="fas fa-arrow-circle-left fa-3x"></i>
+                    </a>
+                </button>
             </div>
             <div class="col-md-4 text-center pt-2">
                 <h1>Report</h1>
-
-            </div>
-            <div class="col-md-1  pt-2">
-
-            </div>
-            <div class="col-md-3  pt-2">
             </div>
         </div>
         <hr>
     </div>
+
     <div class="container  pt-3">
         <div class="row">
             <div class="col-md-6 ">
@@ -122,7 +124,7 @@
                         <div class="d-flex justify-content-center text-center">
 
                             {{-- Div for chart --}}
-                            <div id="dashboard_div">
+                            <div id="dashboard_div" class="w-100">
                                 <div id="filter_div"></div>
                                 <div id="chart_div"></div>
                             </div>
@@ -140,7 +142,7 @@
                     <div class="card-body text-center">
                         <div class="d-flex justify-content-center text-center">
                             {{-- Div for low stock chart --}}
-                            <div id="low_stock_chart"></div>
+                            <div id="low_stock_chart" class="w-100"></div>
                         </div>
                     </div>
                 </div>
@@ -159,12 +161,9 @@
                         @endforeach
 
                     </div>
-
                     <div class="card-body">
-
                         <div class="card d-inline-block text-light px-2"
                             style="width:40%;background-color:rgb(40, 171, 84);">
-
                             <table>
                                 @foreach ($items3 as $item3)
                                     <tr>
@@ -202,25 +201,14 @@
                                             <td>{{ $item3->item_name }}</td>
                                             <td>{{ $item3->item_price }}</td>
                                             <td>{{ $item3->order_qty }}</td>
-
-
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-
-
-
-
-
-
 @endsection
