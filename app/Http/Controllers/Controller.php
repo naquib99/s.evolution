@@ -283,7 +283,14 @@ class Controller extends BaseController
         $item_stock_qty = request('item_qty');
 
         //Update existing item info
-        Item::where('item_id', $item_id)->update(['vendor_id' => $vendor_id, 'item_name' => $item_name, 'item_brand' => $item_brand, 'item_price' => $item_price, 'item_stock_qty' => $item_stock_qty]);
+        Item::where('item_id', $item_id)
+            ->update([
+                'vendor_id' => $vendor_id,
+                'item_name' => $item_name,
+                'item_brand' => $item_brand,
+                'item_price' => $item_price,
+                'item_stock_qty' => $item_stock_qty
+            ]);
 
         return redirect('/stock');
     }
@@ -298,12 +305,10 @@ class Controller extends BaseController
         $item->item_brand = request('item_brand');
         $item->item_price = request('item_price');
         $item->item_stock_qty = request('item_qty');
-
-
+        $item->item_category = request('item_category');
 
         //Insert Item values
         $item->save();
-
 
         return redirect('/stock');
     }
@@ -320,21 +325,35 @@ class Controller extends BaseController
         $data1 = Item::select('*')->where('item_id', '=', $item_id)->delete();
         return redirect('/stock');
     }
+
     public function stockReport()
     {
         //Query for Brands
-        $data = Item::groupBy('item_brand')->orderBy('sum', 'desc')->select('item_brand', DB::raw("count(item_id) as sum"))->get();
+        $itemByBrands = Item::groupBy('item_brand')->orderBy('sum', 'desc')
+            ->select('item_brand', DB::raw("count(item_id) as sum"))
+            ->get();
 
         //Query for Low Stock
-        $data2 = Item::select('item_id', 'item_name', 'item_stock_qty')->where('item_stock_qty', '<', '30')->get();
+        $lowStock = Item::select('item_id', 'item_name', 'item_stock_qty')
+            ->where('item_stock_qty', '<', '30')
+            ->get();
+
+        //Query for item by category
+        $itemByCategory = Item::groupBy('item_category')->orderBy('sum', 'desc')
+            ->select('item_category', DB::raw("count(item_id) as sum"))
+            ->get();
 
         //Query for Latest Order
         $getLatestOrder = Order::select('*')->orderBy('created_at', 'desc')->take(1)->get();
 
         //Query for latest Order Data
-        $data3 = Order_detail::join('orders', 'order_details.order_id', '=', 'orders.order_id')->join('items', 'order_details.item_id', '=', 'items.item_id')->select('items.*', 'order_details.order_qty', 'orders.*')->where('orders.order_id', '=', $getLatestOrder[0]->order_id)->get();
+        $latestOrder = Order_detail::join('orders', 'order_details.order_id', '=', 'orders.order_id')
+            ->join('items', 'order_details.item_id', '=', 'items.item_id')
+            ->select('items.*', 'order_details.order_qty', 'orders.*')
+            ->where('orders.order_id', '=', $getLatestOrder[0]->order_id)
+            ->get();
 
-        return view('stocks.stockReport', ['items' => $data, 'items2' => $data2, 'items3' => $data3]);
+        return view('stocks.stockReport', ['items' => $itemByBrands, 'items2' => $lowStock, 'items3' => $itemByCategory, 'items4' => $latestOrder]);
     }
 
     //REQUEST ITEM CONTROLLER-------------------------------------------
@@ -368,9 +387,9 @@ class Controller extends BaseController
                 );
                 }
             Request_detail::insert($data2);
-            
+
         }
-        
+
         return redirect()->back()->with('success', 'Items Requested Sucessfully!');
     }
     public function requestList()

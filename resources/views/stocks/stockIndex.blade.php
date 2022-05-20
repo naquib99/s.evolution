@@ -3,7 +3,7 @@
 
 
     <title> Item List </title>
-    
+
 
     <div class="container center pt-5">
         <div class="d-flex">
@@ -11,13 +11,13 @@
                 <h1>Item List</h1>
             </div>
 
-            <div class="ms-auto">
+            <div class="ms-auto align-self-center">
                 <button class="btn btn-primary">
                     <a style="text-decoration:none;" class="text-light" href="/stock/report">
                         <i class="fas fa-file-alt fa-md"></i> Report
                     </a>
                 </button>
-                <button type="button" class="btn btn-primary text-light ml-3">
+                <button type="button" class="btn btn-primary">
                     <a style="text-decoration:none;" class="text-light" href="/stock/create">
                         <i class="fas fa-plus-circle fa-md"></i> Add
                     </a>
