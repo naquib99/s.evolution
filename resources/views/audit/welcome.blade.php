@@ -40,7 +40,7 @@
                                 <td scope="col">{{ $Audits->months }}</td>
                                 <td scope="col">{{ $Audits->year }}</td>
                                 <td scope="col">
-                                    <a href="auditreport/view/{{ $Audits->audit_id }}"><i class="fas fa-eye"></i></a>
+                                    <a href="auditreport/view/{{ $Audits->audit_id }}"><i class="btn btn-primary">View</i></a>
                                 </td>
                             </tr>
                         @endforeach

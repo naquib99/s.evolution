@@ -457,4 +457,12 @@ class Controller extends BaseController
             'auditDetails' => $details, 'detaa' => $deta, 'a' => $a
         ]);
     }
+
+    public function auditDelete($item_id){
+        
+        Order_detail::select('*')->where('item_id', '=', $item_id)->delete();
+
+        
+        return redirect('auditreport')->with('Success','Data Deleted');
+    }
 }
