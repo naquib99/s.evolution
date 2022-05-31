@@ -17,7 +17,19 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    
+    public const HOME = '/staff_home';
+    
+    // protected function authenticated()
+    // {
+    //     if (auth()->user()->position == 'Staff') { // do your magic here
+    //         return redirect('/staff_home');
+    //     } else {
+    //         return redirect('/admin_home');
+    //     }
+
+    //     return redirect('/home');
+    // }
 
     /**
      * The controller namespace for the application.

@@ -84,6 +84,9 @@
 
                     @if (Auth::user()->position == 'Admin')
                         <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/admin_home">Admin Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/stock">Inventory</a>
                         </li>
                         <li class="nav-item">
