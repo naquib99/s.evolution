@@ -61,6 +61,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     //Audit Report
     Route::get('/auditreport', 'App\Http\Controllers\Controller@auditIndex');
     Route::get('/auditreport/view/{id}', 'App\Http\Controllers\Controller@auditShow');
+    Route::get('/click_delete/{item_id}', 'App\Http\Controllers\Controller@auditDelete');
 });
 
 Route::get('/staff_home', [Controller::class, 'staffHomeIndex'])->middleware('auth');

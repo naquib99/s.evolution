@@ -93,7 +93,7 @@
                                     <td>{{ $deta->item_price }}</td>
                                     <td>{{ $deta->item_total_price }}</td>
                                     <td>{{ $deta->vendor_company }}</td>
-
+                                    <td><a href="/click_delete/{{ $deta->item_id }}" method="POST" class="btn btn-primary">Delete</a></td>
                                 </tr>
                             @endforeach
                     </td>
