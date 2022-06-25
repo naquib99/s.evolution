@@ -28,8 +28,8 @@
                             <td>{{ $staff->name }}</td>
                             <td>{{ $staff->created_at }}</td>
                             <td><a href="/item_approvals/request/{{ $staff->req_id }}"><button
-                                        class="btn btn-outline-primary" type="button">
-                                        <i class="far fa-eye"></i>
+                            class="btn btn-primary" type="button">
+                                        <i class="btn btn-primary">View</i>
                                     </button>
                             </td>
                         </tr>

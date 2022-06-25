@@ -76,10 +76,7 @@
     <body>
         <div class="container pt-5">
             <div class="center">
-                @foreach ($request as $data)
-                    <form action="/item_approvals/userList/{{ $data->req_id }}" method="POST">
-                @endforeach
-                @csrf
+               
                 <h5>Staff Information:</h5>
                 <div class="row">
                     <div class="column">
@@ -111,6 +108,7 @@
                         <th>Item id</th>
                         <th>Quantity</th>
                         <th>Action</th>
+                        
                     </tr>
                     @foreach ($datas as $data)
                         <tr>
@@ -125,6 +123,10 @@
                             <td><a href="/item_approvals/req/{{ $data->req_id }}/{{ $data->item_id }}"><button
                                         type="button" class="btn btn-outline-danger"
                                         onclick="return confirm('Do you really want to delete?');">Delete</button></a></td>
+
+                            
+                           
+                                        
                             <?php $b = $b + $data->req_qty; ?>
                         </tr>
                     @endforeach
@@ -136,6 +138,7 @@
                         <td>
                             <p id="total" name="total"><?php echo $b; ?></p>
                         </td>
+                        <td><form method="post" action="/update/{{$data->req_id}}" >@csrf<button type="submit" class="btn btn-primary">Approve</form></td>
                         <td></td>
                     </tr>
                 </table>
@@ -143,7 +146,7 @@
                 <br>
                 <input type="submit" class="btn btn-success col-md-12 text-center" value="SAVE">
                 <br><br><br>
-                </form>
+               
             </div>
         </div>
     @endsection

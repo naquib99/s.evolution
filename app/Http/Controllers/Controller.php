@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Staff;
 use App\Models\requests;
+use App\Models\Request as RRequest;
 use App\Models\request_details;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\JoinClause;
@@ -48,6 +49,16 @@ class Controller extends BaseController
     {
         $id = Auth::user();
         return view('main_menu.index_admin');
+    }
+
+    public function updateRequestStatus(Request $request, $id){
+        
+        RRequest::where("req_id", "=" ,$id)->update([
+            "req_status" => "Approved"
+        ]);
+
+        return redirect("item_approvals/request/$id");
+
     }
 
     //MANAGE NEW STOCK ORDER CONTROLLER----------------------------------------------------------------------------

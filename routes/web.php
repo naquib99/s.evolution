@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/item_approvals/request/{id}', 'App\Http\Controllers\Controller@approveShow');
     Route::get('/item_approvals/req/{reqid}/{id}', 'App\Http\Controllers\Controller@approveDelete');
     Route::post('/item_approvals/userList/{id}', 'App\Http\Controllers\Controller@approveItem');
+    Route::post('/update/{id}','App\Http\Controllers\Controller@updateRequestStatus');
 
 
 
